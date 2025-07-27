@@ -21,7 +21,7 @@ canvas_result = st_canvas(
     key="canvas"
 )
 
-with open("models/LogisticRegression.pkl", "rb") as f:
+with open("models/RandomForest.pkl", "rb") as f:
     model = pickle.load(f)
 
 if st.button("🔍 Predict"):

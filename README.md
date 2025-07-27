@@ -8,5 +8,7 @@ A lightweight web application that recognizes handwritten digits (0–9) drawn b
 
 DigitWise allows you to draw a digit on a canvas and predicts the digit using a trained Random Forest model. The app is built with **Streamlit**, enabling a simple and interactive interface.
 
+---
+
 ### Goal
 To demonstrate how classical ML algorithms (Random Forest) can be applied to image-based digit classification using the UCI Digits dataset.

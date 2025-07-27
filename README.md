@@ -1,4 +1,4 @@
-# DigitWise: Handwritten Digit Recognition App (Random Forest Edition)
+# DigitWise: Handwritten Digit Recognition App
 
 A lightweight web application that recognizes handwritten digits (0–9) drawn by the user using a classical Machine Learning model — Random Forest Classifier.
 

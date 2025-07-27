@@ -12,7 +12,7 @@ st.markdown("Draw a digit (0-9) below and let the AI recognize it!")
 
 canvas_result = st_canvas(
     fill_color="black",
-    stroke_width=10,
+    stroke_width=30,
     stroke_color="white",
     background_color="black",
     height=280,
@@ -30,6 +30,7 @@ if st.button("🔍 Predict"):
         img = cv2.resize(img.astype("uint8"), (28, 28))
         img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         img = img.reshape(1, -1)
+        img = img / 255
         pred = model.predict(img)
 
         st.subheader(f"🎯 Predicted Digit: {pred[0]}")

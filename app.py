@@ -21,8 +21,10 @@ canvas_result = st_canvas(
     key="canvas"
 )
 
-with open("models/RandomForest.pkl", "rb") as f:
+with open("models/MLP.pkl", "rb") as f:
     model = pickle.load(f)
+with open("models/MinMaxScaler.pkl", "rb") as f:
+    scaler = pickle.load(f)
 
 if st.button("🔍 Predict"):
     if canvas_result.image_data is not None:
@@ -30,7 +32,7 @@ if st.button("🔍 Predict"):
         img = cv2.resize(img.astype("uint8"), (28, 28))
         img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         img = img.reshape(1, -1)
-        img = img / 255
+        img = scaler.transform(img)
         pred = model.predict(img)
 
         st.subheader(f"🎯 Predicted Digit: {pred[0]}")
